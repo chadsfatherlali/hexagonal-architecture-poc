@@ -1,29 +1,14 @@
-import { FC, useEffect, useState } from "react"
-import axios from "axios"
+import { AllPost } from "./components/AllPosts"
+import { PostById } from "./components/PostById"
 
-import { PostInterface } from "../../domain/posts/postInterface"
-import { PostService } from "../post/postService"
 import "./App.css"
 
-const App: FC = () => {
-  const [posts, setPosts] = useState<PostInterface[]>([])
-
-  useEffect(() => {
-    (async () => {
-      setPosts(await PostService(axios).ListAllPosts())
-    })()
-  }, [])
-
+const App: React.FC = () => {
   return (
-    <section>
-      {posts.map((post: PostInterface) => (
-        <div key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.body}</p>
-          <hr />
-        </div>
-      ))}
-    </section>
+    <>
+      <AllPost />
+      <PostById id={1} />
+    </>
   )
 }
 

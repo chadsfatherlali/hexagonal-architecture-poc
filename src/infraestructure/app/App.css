@@ -40,3 +40,16 @@
 .read-the-docs {
   color: #888;
 }
+
+h2 {
+  margin-bottom: 3em;
+}
+
+section {
+  border: 1px solid grey;
+  margin: 2em 0;
+  padding: 1em;
+  width: 100%;
+  max-height: 400px;
+  overflow: auto;
+}
