@@ -18,6 +18,7 @@ export const PostById: React.FC<PostByIdInterface> = ({ id }) => {
 
   return (
     <section>
+      <h2> Post by id </h2>
       {post && <Post post={post} />}
     </section>
   )

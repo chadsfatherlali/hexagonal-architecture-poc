@@ -9,13 +9,14 @@ export const AllPost: React.FC = () => {
   const [posts, setPosts] = useState<PostInterface[]>([])
 
   useEffect(() => {
-    (async () => { setPosts(await postService.getAllPosts()) })()
+    (async () => { setPosts(await postService.getAllPosts() ) })()
   }, [postService])
 
   return (
     <section>
+      <h2> All posts </h2>
       {Boolean(posts.length) && posts.map((post: PostInterface) => (
-        <Post post={post} />
+        <Post post={post} key={post.id} />
       ))}
     </section>
   )

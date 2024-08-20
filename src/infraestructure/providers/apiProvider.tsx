@@ -12,7 +12,7 @@ export interface ApiContextInterface {
   postService: PostRepositoryInterface
 }
 
-export const ApiContext = React.createContext<ApiContextInterface | object>({})
+export const ApiContext = React.createContext<ApiContextInterface>({ postService })
 
 export const ApiProvider: React.FC<PropsWithChildren> = (props) => {
   return (
